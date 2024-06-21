@@ -1,0 +1,22 @@
+body {
+    margin: 0px;    
+}
+
+li {
+    list-style: none;
+    margin-left: 0px;
+}
+
+.main-nav {
+    background-color: grey;
+    margin-top: 0px;
+    padding: 1vh 0 1vh 0;
+}
+
+.logo {
+    padding-left: 3vw;
+}
+
+.item-nav {
+    padding-left: 0px;
+}

@@ -1,0 +1,15 @@
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo {
+    flex-grow: 2;
+}
+
+.item-nav {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
