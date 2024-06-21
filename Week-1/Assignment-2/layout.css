@@ -1,3 +1,8 @@
+section {
+    display: flex;    
+    flex-direction: column;
+}
+
 .main-nav {
     display: flex;
     flex-wrap: wrap;
@@ -13,3 +18,16 @@
     justify-content: space-around;
     flex-grow: 1;
 }
+
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+}
+
+.card-list + button {
+    align-self: center;
+}
+
+
+
