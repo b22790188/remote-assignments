@@ -41,7 +41,7 @@ main h2 {
 */
 .main-nav {
     height: 2vh;
-    min-height: 16px;
+    min-height: 24px;
     background-color: grey;
     margin: 0;
     padding: 1vh 0 1vh 0;

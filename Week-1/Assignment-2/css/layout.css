@@ -10,7 +10,12 @@ section {
 }
 
 .logo {
+    display: flex;
     flex-grow: 2;
+}
+
+.logo span{
+    align-self: center;
 }
 
 .item-nav {
@@ -28,6 +33,5 @@ section {
 .card-list + button {
     align-self: center;
 }
-
 
 
