@@ -1,0 +1,64 @@
+/* type selector */
+body {
+    margin: 0px;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+header nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+img {
+    height: 100%;
+}
+
+/* class selector */
+
+.main-nav {
+    height: 2vh;
+    min-height: 24px;
+    background-color: lightgray;
+    margin-top: 0px;
+    padding: 1vh 0;
+}
+
+.product-nav {
+    height: 100%;
+}
+
+.misc-nav {
+    height: 100%;
+}
+
+.serach {
+    padding-right: 1vw;
+}
+
+.language-select {
+    margin-right: 1vw;
+}
+
+.more-btn {
+    margin-right: 1vw;
+}
+
+/* id selector */
+
+#logo {
+    margin-left: 2vw;
+    align-content: center;
+}
+
+#logo span {
+    align-self: center;
+}
+
