@@ -34,7 +34,6 @@ header nav {
 }
 .hero-banner {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .hero-banner-text {
@@ -139,7 +138,7 @@ header nav {
     }
 }
 
-@media (max-height: 800px) {
+@media (max-height: 512px) {
   main {
     margin-top: 32px;
   }
