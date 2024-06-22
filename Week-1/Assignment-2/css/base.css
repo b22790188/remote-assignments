@@ -20,6 +20,10 @@ li {
     margin-left: 0px;
 }
 
+img{
+    height: 100%;
+}
+
 main h1 {
     background-color: powderblue;
     text-align: center;
@@ -36,16 +40,19 @@ main h2 {
     class selector
 */
 .main-nav {
+    height: 2vh;
     background-color: grey;
     margin: 0;
     padding: 1vh 0 1vh 0;
 }
 
 .logo {
+    height: 100%;
     padding-left: 3vw;
 }
 
 .item-nav {
+    height: 100%;
     padding-left: 0px;
 }
 
