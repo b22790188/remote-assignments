@@ -6,13 +6,14 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 
 .product-nav {
     display: flex;
+    flex: 0 1 50%;
     justify-content: space-around;
-    flex-grow: 1;
 }
 
 .misc-nav {
@@ -23,4 +24,25 @@ html {
 .center {
     display: flex;
     align-items: center;
+}
+.hero-banner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-banner-text {
+   display: flex; 
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.hero-banner img {
+    flex: 1;
+}
+
+@media (max-height: 800px) {
+    main {
+        margin-top: 32px;
+    }
 }
