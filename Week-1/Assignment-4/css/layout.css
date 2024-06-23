@@ -46,11 +46,15 @@ header nav {
   flex: 1;
 }
 
-.interested-content-header, .interested-content-btn {
+.interested-content-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.interested-content {
+  background-color: #f1f3f4;
 }
 
 .interested-content-btn {
@@ -62,7 +66,29 @@ header nav {
 .interested-content-body {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between; 
+  justify-content: space-between;
+}
+
+.hot-update {
+  background-color: #f1f3f4;
+}
+
+.four-column-card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2vh;
+}
+
+.product-content h1,
+.product-content .four-column-card-list .card h2,
+.product-content .four-column-card-list .card p {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* id selector */
@@ -72,98 +98,91 @@ header nav {
 
 /* for nav-bar */
 @media (max-width: 600px) {
+  .flex-container {
+    justify-content: flex-end;
+    margin-right: 1vw;
+  }
+  .product-nav li {
+    display: none;
+  }
 
-    .flex-container {
-        justify-content: flex-end;
-        margin-right: 1vw;
-    }
-    .product-nav li {
-        display: none;
-    }
+  .search form input {
+    display: none;
+  }
 
-    .search form input {
-        display: none;
-    }
+  .misc-nav select {
+    display: none;
+  }
 
-    .misc-nav select {
-        display: none;
-    }
-
-    .hero-banner{
-      flex-wrap: wrap;
-      height: unset;
-    }
+  .hero-banner {
+    flex-wrap: wrap;
+    height: unset;
+  }
 }
 
-@media (min-width:600px) and (max-width: 850px) {
-
-    .flex-container {
-        justify-content: flex-end;
-        margin-right: 1vw;
-    }
-    .product-nav li {
-        display: none;
-    }
-
+@media (min-width: 600px) and (max-width: 850px) {
+  .flex-container {
+    justify-content: flex-end;
+    margin-right: 1vw;
+  }
+  .product-nav li {
+    display: none;
+  }
 }
 
 @media (min-width: 850px) and (max-width: 1000px) {
+  .flex-container {
+    justify-content: space-between;
+    margin-right: 1vw;
+  }
+  .product-nav li {
+    display: none;
+  }
 
-    .flex-container {
-        justify-content: space-between;
-        margin-right: 1vw;
-    }
-    .product-nav li {
-        display: none;
-    }
-
-    .product-nav > li:first-child,
-    .product-nav > li:last-child {
-        display: list-item;
-    }
+  .product-nav > li:first-child,
+  .product-nav > li:last-child {
+    display: list-item;
+  }
 }
 
 @media (min-width: 1000px) and (max-width: 1200px) {
+  .flex-container {
+    justify-content: space-between;
+    margin-right: 1vw;
+  }
+  .product-nav li {
+    display: none;
+  }
 
-    .flex-container {
-        justify-content: space-between;
-        margin-right: 1vw;
-    }
-    .product-nav li {
-        display: none;
-    }
-
-    .product-nav > li:first-child,
-    .product-nav > li:nth-child(2),
-    .product-nav > li:last-child {
-        display: list-item;
-    }
+  .product-nav > li:first-child,
+  .product-nav > li:nth-child(2),
+  .product-nav > li:last-child {
+    display: list-item;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1440px) {
+  .flex-container {
+    justify-content: space-between;
+    margin-right: 1vw;
+  }
+  .product-nav li {
+    display: none;
+  }
 
-    .flex-container {
-        justify-content: space-between;
-        margin-right: 1vw;
-    }
-    .product-nav li {
-        display: none;
-    }
-
-    .product-nav > li:first-child,
-    .product-nav > li:nth-child(2),
-    .product-nav > li:nth-child(3),
-    .product-nav > li:nth-child(4),
-    .product-nav > li:last-child {
-        display: list-item;
-    }
+  .product-nav > li:first-child,
+  .product-nav > li:nth-child(2),
+  .product-nav > li:nth-child(3),
+  .product-nav > li:nth-child(4),
+  .product-nav > li:last-child {
+    display: list-item;
+  }
 }
 
 @media (min-width: 1440px) {
-
-    .product-nav > li:last-child {
-        display: none;
-    }
+  .product-nav > li:last-child {
+    display: none;
+  }
 }
 
 @media (max-height: 512px) {

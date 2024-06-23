@@ -1,96 +1,367 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/base.css">
-        <link rel="stylesheet" href="./css/pseudo.css">
-        <link rel="stylesheet" href="./css/layout.css">
-        <title>Google for Developers</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div id="logo"><img src="./images/google_for_developers.png"></div>
-                
-                <div class="flex-container">
-                    <ul class="product-nav">
-                        <li>產品</li> 
-                        <li>解決方案</li>
-                        <li>事件</li>
-                        <li>瞭解詳情</li>
-                        <li>Community</li>
-                        <li>開發人員計畫</li>
-                        <li>網誌</li>
-                        <li>更多選項</li>
-                    </ul>
-                    
-                    <div class="search">
-                        <form action="/search" method="get">
-                            <input type="text" class="seach-box" name="query" placeholder="搜尋結果">
-                            <button type="submit" class="search-btn">button</button>
-                        </form>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/pseudo.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <title>Google for Developers</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo"><img src="./images/google_for_developers.png" /></div>
 
-                <div class="misc-nav">
+        <div class="flex-container">
+          <ul class="product-nav">
+            <li>產品</li>
+            <li>解決方案</li>
+            <li>事件</li>
+            <li>瞭解詳情</li>
+            <li>Community</li>
+            <li>開發人員計畫</li>
+            <li>網誌</li>
+            <li>更多選項</li>
+          </ul>
 
-                    <div class="language-select">
-                        <select>
-                            <option>English</option>
-                            <option>中文</option>
-                        </select>
-                    </div>
-                        
-                    <button class="more-btn">
-                        <span class="more-icon">&#8942</span>
-                    </button>
-                        
-                    <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo">
-                </div>
-            </nav>
-        </header>
-        <main>
-            <div class="banner">
-                Build with Gemini, our largest and most capable AI model. <span class="underline">Get an API key.</span>
+          <div class="search">
+            <form action="/search" method="get">
+              <input
+                type="text"
+                class="seach-box"
+                name="query"
+                placeholder="搜尋結果"
+              />
+              <button type="submit" class="search-btn">button</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="misc-nav">
+          <div class="language-select">
+            <select>
+              <option>English</option>
+              <option>中文</option>
+            </select>
+          </div>
+
+          <button class="more-btn">
+            <span class="more-icon">&#8942</span>
+          </button>
+
+          <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="banner">
+        Build with Gemini, our largest and most capable AI model.
+        <span class="underline">Get an API key.</span>
+      </div>
+      <section class="hero-banner">
+        <div class="hero-banner-text">
+          <p>重溫<strong>2024年Google I/O大會</strong></p>
+          <p>
+            倒轉並重溫<strong>2024年</strong>的<strong>Google I/O大會</strong
+            >。主題演講和講座現已推出隨選影片。
+          </p>
+          <button>觀看隨選影片</button>
+        </div>
+        <img
+          src="../Assignment-4/images/google_hero_banner.png"
+          alt="google_hero_banner"
+        />
+      </section>
+      <div class="main-content">
+        <section class="interested-content">
+          <div class="interested-content-header">
+            <span>選取要篩選的興趣類別</span>
+            <div class="interested-content-btn">
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+              <a href="#">建立帳戶</a>
             </div>
-            <section class="hero-banner">
-                <div class="hero-banner-text">
-                    <p>重溫<strong>2024年Google I/O大會</strong></p>
-                    <p>倒轉並重溫<strong>2024年</strong>的<strong>Google I/O大會</strong>。主題演講和講座現已推出隨選影片。</p>
-                    <button>觀看隨選影片</button>
-                </div>
-                <img src="../Assignment-4/images/google_hero_banner.png" alt="google_hero_banner">
-            </section>
+          </div>
+          <ul class="interested-content-body">
+            <li>付款</li>
+            <li>行動</li>
+            <li>位置/地圖</li>
+            <li>物聯網(IoT)</li>
+            <li>設計</li>
+            <li>智慧型住宅生態系統</li>
+            <li>開放原始碼</li>
+            <li>搜尋</li>
+            <li>網路</li>
+            <li>廣告</li>
+            <li>AI與機器學習</li>
+          </ul>
+        </section>
+        <section class="hot-update">
+          <span>熱門更新內容</span>
+          <div class="four-column-card-list">
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+            <div class="card">
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+              <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo" />
+            </div>
+          </div>
+        </section>
 
-            <section class="interested-content">
-                <div class="interested-content-header">
-                    <span>選取要篩選的興趣類別</span>
-                    <div class="interested-content-btn">
-                        <img src="../Assignment-2/images/bird_logo.png" alt="bird_logo">
-                        <a href="#">建立帳戶</a>
-                    </div>
-                </div>
-                <ul class="interested-content-body">
-                    <li>付款</li>
-                    <li>行動</li>
-                    <li>位置/地圖</li>
-                    <li>物聯網(IoT)</li>
-                    <li>設計</li>
-                    <li>智慧型住宅生態系統</li>
-                    <li>開放原始碼</li>
-                    <li>搜尋</li>
-                    <li>網路</li>
-                    <li>廣告</li>
-                    <li>AI與機器學習</li>
-                </ul>
-            </section>
-            <section class="hot-update">
-
-            </section>
-        </main>
-        <footer>
-
-        </footer>
-    </body>
+        <section class="product-content">
+          <h1>立即開始建構</h1>
+          <div class="four-column-card-list">
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+            <div class="card">
+              <div class="center">
+                <img
+                  src="../Assignment-2/images/bird_logo.png"
+                  alt="bird_logo"
+                />
+              </div>
+              <h2>開始使用Google Cloud</h2>
+              <p>
+                探索快速入門導覽課程、互動式教學課程、技術說明文件、影片和架構圖，協助您開始使用
+                Google Cloud。
+              </p>
+            </div>
+          </div>
+        </section>
+        <button class="center">查看所有開發人員產品</button>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
 </html>
