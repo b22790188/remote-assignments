@@ -63,6 +63,8 @@ main {
 .banner {
   background-color: #1a73e8;
   text-align: center;
+  font-size: 16px;
+  color: white;
   padding: 3vh 0;
 }
 
@@ -96,10 +98,21 @@ main {
 
 .underline {
   text-decoration: underline;
+  color: black;
 }
 
-.main-content {
-  padding: 3vh 1.5vw 1vh 1.5vw;
+.hot-update,
+.interested-content,
+.android-new-feature {
+  padding: 3vh 10vw 5vh 10vw;
+  background-color: #f1f3f4;
+}
+
+.product-content,
+.dev-content,
+.hot-news,
+.android-new-feature {
+  padding: 3vh 10vw 5vh 10vw;
 }
 
 .interested-content-header img {
@@ -119,13 +132,94 @@ main {
 }
 
 .card {
+  background-color: #ffffff;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 12px;
   padding: 16px;
+}
+
+.card p{
+    margin-bottom: auto;
 }
 
 .card img {
   height: 30px;
+}
+
+.main-content .center {
+  margin: 2vh 0 2vh 0;
+}
+
+.main-content .center button,
+.hot-news button {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 12px 24px;
+}
+
+.hot-update h2{
+  color: #1a73e8;
+}
+
+.dev-content > p:first-child {
+  font-size: 48px;
+}
+
+.dev-content > p:nth-child(2) {
+  font-size: 24px;
+}
+
+.dev-content .card img {
+  height: 10vh;
+}
+
+.hot-news h2 {
+  font-size: 32px;
+}
+
+.hot-news .three-column-card-list .card {
+  padding: 0px;
+}
+
+.hot-news .three-column-card-list .card img {
+  min-height: 30vh;
+  width: 100%;
+  object-fit: fill;
+  object-position: 16/9;
+}
+
+.info-block {
+  padding: 24px;
+}
+
+.info-block a {
+  font-size: 24px;
+  color: #1a73e8;
+}
+
+.feature-image img {
+  max-height: 50vh;
+  width: 100%;
+}
+
+.android-new-feature .info-block span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.android-new-feature .info-block a {
+  font-size: 48px;
+  color: black;
+  margin-bottom: 24px;
+}
+
+.android-new-feature .info-block button {
+  background-color: #1a73e8;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding: 8px 24px;
+  margin-top: 32px;
 }
 
 /* id selector */
