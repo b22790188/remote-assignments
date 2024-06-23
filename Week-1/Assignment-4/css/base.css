@@ -35,6 +35,10 @@ main {
     margin: 0px;
 }
 
+.flex-container {
+    height: 100%;
+}
+
 .product-nav {
     height: 100%;
     margin: 0px;
@@ -42,6 +46,10 @@ main {
 
 .misc-nav {
     height: 100%;
+}
+
+.misc-nav img {
+    max-height: 30px;
 }
 
 .language-select {
@@ -85,13 +93,30 @@ main {
     object-fit: contain;
     width: 40%; 
 }
-/* id selector */
 
 .underline {
     text-decoration: underline;
 }
 
-#logo {
+.interested-content {
+    padding: 3vh 1.5vw 1vh 1.5vw;
+}
+
+.interested-content-header img{
+    height: 22px;
+    padding-right: 1vh;
+}
+
+.interested-content-body li {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0 1vw;
+    margin: 0;
+}
+/* id selector */
+#logo img{
+    height: 3vh;
+    object-fit: contain;
     align-content: center;
 }
 
