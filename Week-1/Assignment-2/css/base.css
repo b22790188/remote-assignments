@@ -28,7 +28,7 @@ main h1 {
     background-color: powderblue;
     text-align: center;
     margin: 0px;
-    padding: 10vh;
+    padding: 10vh 0;
 }
 
 main h2 {
@@ -44,7 +44,7 @@ main h2 {
     min-height: 24px;
     background-color: grey;
     margin: 0;
-    padding: 1vh 0 1vh 0;
+    padding: 1vh 0;
 }
 
 .logo {
