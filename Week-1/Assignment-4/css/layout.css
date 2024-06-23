@@ -65,7 +65,8 @@ header nav {
   justify-content: space-between;
 }
 
-.hot-update .card {
+.hot-update .card,
+.dev-content .card div{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,6 +98,8 @@ header nav {
   text-align: center;
 }
 
+
+
 .dev-content > p {
   text-align: center;
 }
@@ -104,6 +107,10 @@ header nav {
 .dev-content .card{
   display: flex;
   justify-content: space-between;
+}
+
+.dev-content .card div p {
+  margin: 0;
 }
 
 .hot-news .three-column-card-list .card {

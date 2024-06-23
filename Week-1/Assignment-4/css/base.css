@@ -151,7 +151,11 @@ main {
 }
 
 .main-content .center button,
-.hot-news button {
+.hot-news button,
+.dev-content button {
+  background-color: #1a73e8;
+  color: white;
+  font-size: 16px;
   border: 1px solid;
   border-radius: 5px;
   padding: 12px 24px;
@@ -175,6 +179,10 @@ main {
 
 .hot-news h2 {
   font-size: 32px;
+}
+
+.hot-news p {
+  margin-bottom: 2vh;
 }
 
 .hot-news .three-column-card-list .card {
