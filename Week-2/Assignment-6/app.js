@@ -2,7 +2,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-      {/* <MainContentBox /> */}
+      <MainContentBox />
     </>
   );
 };

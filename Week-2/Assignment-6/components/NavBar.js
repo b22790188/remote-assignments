@@ -14,9 +14,6 @@ function NavBar() {
           <span>Website/Title</span>
         </li>
         <ul className="item-nav">
-          {/**
-           * using map to create list
-           */}
           {images.map((image) => (
             <li>
               <img src={pathPrefix + image}></img>

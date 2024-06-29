@@ -1,7 +1,7 @@
 function MainContentBox() {
   return (
     <main>
-      <h1>Welcome Message</h1>
+      <Header></Header>
       <section>
         <h2>Section title</h2>
         <ul className="card-list">
