@@ -61,12 +61,7 @@ main h2 {
     margin: 0 10vw 3vh 10vw;
 }  
 
-/**
-    一開始先隱藏第五個以後的所有list-item
-*/
-.card-list > li:nth-child(n+5){
-    display: none;    
-}
+
 
 .card-list-item {
     background-color: grey;

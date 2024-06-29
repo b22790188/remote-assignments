@@ -14,8 +14,8 @@ function NavBar() {
           <span>Website/Title</span>
         </li>
         <ul className="item-nav">
-          {images.map((image) => (
-            <li>
+          {images.map((image, index) => (
+            <li key={index}>
               <img src={pathPrefix + image}></img>
             </li>
           ))}
