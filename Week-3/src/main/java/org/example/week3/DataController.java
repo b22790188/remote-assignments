@@ -26,7 +26,6 @@ public class DataController {
 
         return "data";
     }
-
     /**
      *
      * @param ex MethodArgumentTypeMismatchException
