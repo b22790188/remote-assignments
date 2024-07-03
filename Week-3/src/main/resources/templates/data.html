@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum</title>
+</head>
+<body>
+
+<!--This section displays the message when the input is invalid.
+    The message will be set in the controller if the input is not a valid number.-->
+<div th:if="${message}">
+    <h1 th:text="${message}"></h1>
+</div>
+<!--This section displays the calculated result when the input is valid.
+    If there is no error message, the number will be shown... -->
+<div th:if="${sum}">
+    <h1>Sum of 1+2+3+....+n is <span th:text="${sum}"></span></h1>
+</div>
+</body>
+</html>
