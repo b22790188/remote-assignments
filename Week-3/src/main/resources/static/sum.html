@@ -5,79 +5,72 @@
     <title>sum</title>
 </head>
 <body>
-    <h1>Input a Number you want</h1>
-    <form id="sumForm">
-        <label for="sumInput"></label>
-        <input type="text" id="sumInput" name="number" placeholder="Enter a Number">
-        <button type="submit">Submit</button>
-    </form>
+<h1>Input a Number you want</h1>
+<form id="sumForm">
+    <label for="sumInput"></label>
+    <input type="text" id="sumInput" name="number" placeholder="Enter a Number">
+    <button type="submit">Submit</button>
+</form>
 
-    <script>
-        <!--    Using IIFE to invoke fetch to get sum    -->
-        (async function (){
-            try{
-                const response = await fetch("http://localhost:3000/data?number=10", {
+<script>
+
+    async function fetchSum(sumInput) {
+        try {
+            const response = await fetch(`http://localhost:3000/data?number=${sumInput}`, {
                     method: 'GET',
-                    headers:{
-                        'Content-Type': 'application/json'
-                    },
-                });
-
-                if(!response.ok){
-                    throw new Error('Response failed');
+                    headers: {
+                        'content-Type': 'application/json'
+                    }
                 }
+            );
 
-                //Extract sum info from data.html
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const sum = doc.getElementById('sum').innerText;
-
-                //Add result back to DOM
-                const body = document.querySelector('body');
-                const p = document.createElement('p');
-                p.innerText = `The result of 1+2+3+...+10 is ${sum}`;
-                body.prepend(p);
-
-            }catch(error){
-                console.error('Error: ', error);
+            if (!response.ok) {
+                throw new Error('Response failed');
             }
-        })()
 
-        document.getElementById("sumForm").addEventListener('submit', async function(event){
-            /* prevent browser to refresh page */
-            event.preventDefault();
+            //Extract sum info from data.html
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
 
-            const sumInput= document.getElementById("sumInput").value;
+            return doc.getElementById('sum').innerText;
 
-            try{
-                const response = await fetch(`http://localhost:3000/data?number=${sumInput}`, {
-                    method: 'GET',
-                    headers:{
-                        'Content-Type': 'application/json'
-                    },
-                });
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
-                if(!response.ok){
-                    throw new Error('Response failed');
-                }
+    /* append result back to DOM*/
+    function displayResult(sumInput, sum) {
+        const body = document.querySelector("body");
+        const p = document.createElement("p");
+        p.innerText = `The result of 1+2+3+...+${sumInput} is ${sum}`;
+        body.append(p);
+    }
 
-                /* Extract sum info from data.html */
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const sum = doc.getElementById('sum').innerText;
+    /* combine two function above*/
+    async function handleSumRequest(sumInput){
+        try{
+            const sum = await fetchSum(sumInput);
+            displayResult(sumInput, sum);
 
-                /* Add result back to DOM */
-                const body = document.querySelector('body');
-                const p = document.createElement('p');
-                p.innerText = `The result of 1+2+3+...+10 is ${sum}`;
-                body.append(p);
+        }catch(err){
+            console.error(err);
+        }
+    }
 
-            }catch(error){
-                console.error('Error: ', error);
-            }
-        })
-    </script>
+    /* use IIFE to invoke fetch to get sum of 1+2+3+...+10 */
+    (async function(){
+        await handleSumRequest(10);
+    })()
+
+    document.getElementById("sumForm").addEventListener('submit', async function (event) {
+        /* prevent browser to refresh page */
+        event.preventDefault();
+
+        const sumInput = document.getElementById("sumInput").value;
+        await handleSumRequest(sumInput);
+    })
+</script>
 </body>
 </html>

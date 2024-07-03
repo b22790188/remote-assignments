@@ -28,12 +28,11 @@ public class DataController {
     }
     /**
      *
-     * @param ex MethodArgumentTypeMismatchException
      * @param model used to pass attribute to view
      * @return The name of the view to be rendered
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public String handleException(MethodArgumentTypeMismatchException ex, Model model) {
+    public String handleException(Model model) {
         model.addAttribute("message", "Wrong Parameter Type! Please input number");
         return "data";
     }
