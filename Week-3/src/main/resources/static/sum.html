@@ -16,13 +16,7 @@
 
     async function fetchSum(sumInput) {
         try {
-            const response = await fetch(`http://localhost:3000/data?number=${sumInput}`, {
-                    method: 'GET',
-                    headers: {
-                        'content-Type': 'application/json'
-                    }
-                }
-            );
+            const response = await fetch(`http://localhost:3000/data?number=${sumInput}`);
 
             if (!response.ok) {
                 throw new Error('Response failed');
@@ -44,7 +38,11 @@
     function displayResult(sumInput, sum) {
         const body = document.querySelector("body");
         const p = document.createElement("p");
-        p.innerText = `The result of 1+2+3+...+${sumInput} is ${sum}`;
+        if(sum === undefined){
+            p.innerText = "The number you input is too large, or your input is not number, please try again!"
+        } else{
+            p.innerText = `The result of 1+2+3+...+${sumInput} is ${sum}`;
+        }
         body.append(p);
     }
 

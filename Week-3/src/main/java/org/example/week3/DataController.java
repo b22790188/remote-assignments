@@ -17,7 +17,7 @@ public class DataController {
      */
     @GetMapping("/data")
     public String sum(@RequestParam(name = "number", required = false) Long number, Model model) {
-        try{
+        try {
 
             if (number == null) {
                 model.addAttribute("message", "Lack of Parameter");
@@ -33,7 +33,7 @@ public class DataController {
                 long sum = multiply / 2;
                 model.addAttribute("sum", sum);
             }
-        }catch(ArithmeticException ex){
+        } catch (ArithmeticException ex) {
             model.addAttribute("message", "Sum is too big");
         }
 
@@ -46,7 +46,7 @@ public class DataController {
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public String handleException(Model model) {
-        
+
         model.addAttribute("message", "Wrong Parameter Type! Please input number");
         return "data";
     }
