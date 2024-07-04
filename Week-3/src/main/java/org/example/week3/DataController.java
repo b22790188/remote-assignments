@@ -11,23 +11,23 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 public class DataController {
 
     /**
-     * @param number user input
-     * @param model used to pass attribute to view
+     * @param number User input
+     * @param model  Used to pass attribute to view
      * @return String The name of view to be rendered
      */
     @GetMapping("/data")
-    public String sum(@RequestParam(required = false) Integer number, Model model) {
-        try {
+    public String sum(@RequestParam(name = "number", required = false) Integer number, Model model) {
+        if (number == null) {
+            model.addAttribute("message", "Lack of Parameter");
+        } else {
             int sum = number * (1 + number) / 2;
             model.addAttribute("sum", sum);
-        }catch(NullPointerException npe){
-            model.addAttribute("message", "Lack of Parameter");
         }
 
         return "data";
     }
+
     /**
-     *
      * @param model used to pass attribute to view
      * @return The name of the view to be rendered
      */

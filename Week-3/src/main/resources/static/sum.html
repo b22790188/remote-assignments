@@ -49,26 +49,26 @@
     }
 
     /* combine two function above*/
-    async function handleSumRequest(sumInput){
-        try{
+    async function handleSumRequest(sumInput) {
+        try {
             const sum = await fetchSum(sumInput);
             displayResult(sumInput, sum);
 
-        }catch(err){
+        } catch (err) {
             console.error(err);
         }
     }
 
     /* use IIFE to invoke fetch to get sum of 1+2+3+...+10 */
-    (async function(){
+    (async function () {
         await handleSumRequest(10);
     })()
 
-    document.getElementById("sumForm").addEventListener('submit', async function (event) {
+    document.getElementById('sumForm').addEventListener('submit', async function (event) {
         /* prevent browser to refresh page */
         event.preventDefault();
 
-        const sumInput = document.getElementById("sumInput").value;
+        const sumInput = document.getElementById('sumInput').value;
         await handleSumRequest(sumInput);
     })
 </script>

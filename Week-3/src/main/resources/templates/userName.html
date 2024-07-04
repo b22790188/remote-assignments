@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getUserName</title>
+</head>
+<body>
+<!-- If `userName` is not null, pass `userName` to `userName.html` to display the user's name.
+Otherwise, the screen will show a form to prompt the user to enter their name since `userName`
+ is not provided.-->
+
+<div th:if="${name == null || name.isEmpty()}">
+    <h1 th:text="${message}"></h1>
+    <form id="nameForm" action="trackName" method="get">
+        <label for="nameInput"></label>
+        <input type="text" id="nameInput" name="name" placeholder="input your name">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div th:if="${name}">
+    <h1>Get your name! you are <span th:text="${name}"></span></h1>
+</div>
+</body>
+</html>
