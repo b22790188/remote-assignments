@@ -16,12 +16,25 @@ public class DataController {
      * @return String The name of view to be rendered
      */
     @GetMapping("/data")
-    public String sum(@RequestParam(name = "number", required = false) Integer number, Model model) {
-        if (number == null) {
-            model.addAttribute("message", "Lack of Parameter");
-        } else {
-            int sum = number * (1 + number) / 2;
-            model.addAttribute("sum", sum);
+    public String sum(@RequestParam(name = "number", required = false) Long number, Model model) {
+        try{
+
+            if (number == null) {
+                model.addAttribute("message", "Lack of Parameter");
+            } else {
+                /**
+                 * Break the expression into multiple steps to check for overflow at each stage of the calculation.
+                 */
+                long first = 1L;
+                long last = number;
+                long n = number;
+                long firstAddLast = Math.addExact(first, last);
+                long multiply = Math.multiplyExact(firstAddLast, n);
+                long sum = multiply / 2;
+                model.addAttribute("sum", sum);
+            }
+        }catch(ArithmeticException ex){
+            model.addAttribute("message", "Sum is too big");
         }
 
         return "data";
@@ -33,6 +46,7 @@ public class DataController {
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public String handleException(Model model) {
+        
         model.addAttribute("message", "Wrong Parameter Type! Please input number");
         return "data";
     }
