@@ -19,5 +19,6 @@
     </form>
 </div>
 <h1 th:if="${name}">Get your name! you are <span th:text="${name}"></span></h1>
+<button th:if="${name}" type="submit" onclick="location.href='/removeCookie'">Clear Cookie</button>
 </body>
 </html>

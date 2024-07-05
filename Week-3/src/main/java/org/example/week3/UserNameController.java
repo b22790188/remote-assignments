@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UserNameController {
 
     /**
+     * Get userName
      * @param name  Cookie value from browser
      * @param model Used to pass attribute to view
      * @return The name of view to be rendered
@@ -34,6 +35,7 @@ public class UserNameController {
     }
 
     /**
+     * Used to set cookie when there is no cookie provided in the beginning
      * @param name     Query parameter passed by form.
      * @param response Used to add cookie.
      * @return String Target redirect URL
@@ -41,6 +43,20 @@ public class UserNameController {
     @GetMapping("/trackName")
     public String trackName(@RequestParam(name = "name") String name, HttpServletResponse response) {
         Cookie cookie = new Cookie("NAME", name);
+        response.addCookie(cookie);
+
+        return "redirect:/myName";
+    }
+
+    /**
+     * Clear cookie and redirect to myName page
+     * @param response used to add cookie.
+     * @return String Target redirect URL
+     */
+    @GetMapping("/removeCookie")
+    public String removeCookie(HttpServletResponse response) {
+        Cookie cookie = new Cookie("NAME", "");
+        cookie.setMaxAge(0);
         response.addCookie(cookie);
 
         return "redirect:/myName";
