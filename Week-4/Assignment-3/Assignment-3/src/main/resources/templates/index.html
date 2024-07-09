@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Below is sign-up form</h1>
+<form id="sign-up" action="handleSignUp" method="post">
+    <label for="register-email">Email:</label>
+    <p><input type="text" id="register-email" name="email" placeholder="Input your email"></p>
+    <label for="register-password">Password:</label>
+    <p><input type="text" id="register-password" name="password" placeholder="Input your password"></p>
+    <!--    Todo: 重複輸入一次    -->
+    <button type="submit">Submit</button>
+</form>
+
+<h1>Below is sign-in form</h1>
+<form id="sign-in">
+    <label for="user-email">Email:</label>
+    <p><input type="text" id="user-email" name="email" placeholder="Input your email"></p>
+    <label for="user-password">Password:</label>
+    <p><input type="text" id="user-password" name="password" placeholder="Input your password"></p>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
