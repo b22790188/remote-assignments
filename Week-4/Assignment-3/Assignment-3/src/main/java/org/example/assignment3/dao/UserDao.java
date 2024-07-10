@@ -15,5 +15,5 @@ public interface UserDao {
      * @param userDto User info provided by client.
      * @return - Message that shows if signup is successful or not.
      */
-    String createUser(UserDto userDto);
+    void createUser(UserDto userDto);
 }

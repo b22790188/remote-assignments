@@ -14,24 +14,8 @@ import java.util.Optional;
 @RequestMapping("/")
 public class IndexController {
 
-    @Autowired
-    private UserService userService;
-
     @GetMapping("/")
     public String index(){
         return "index";
     }
-
-    @GetMapping("/signup")
-    public String getSignup(){
-        return "signup";
-    }
-
-    @PostMapping("/signup")
-    public String postSignup(@ModelAttribute UserDto userDto, Model model){
-        String signupMessage = userService.signup(userDto);
-        model.addAttribute("message", signupMessage);
-        return "signup";
-    }
-
 }
