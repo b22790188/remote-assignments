@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+<div th:if="${message}">
+    <h1 th:text="${message}"></h1>
+</div>
+<div th:unless="${message}">
+    <form id="sign-up" action="signup" method="post">
+        <label for="register-email">Email:</label>
+        <p><input type="text" id="register-email" name="email" placeholder="Input your email"></p>
+        <label for="register-password">Password:</label>
+        <p><input type="text" id="register-password" name="password" placeholder="Input your password"></p>
+        <!--    Todo: 重複輸入一次    -->
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

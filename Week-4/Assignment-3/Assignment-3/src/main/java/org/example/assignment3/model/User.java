@@ -7,8 +7,7 @@ public class User {
 
     public User() {}
 
-    public User(long id, String password, String email) {
-        setId(id);
+    public User(String email, String password) {
         setEmail(email);
         setPassword(password);
     }

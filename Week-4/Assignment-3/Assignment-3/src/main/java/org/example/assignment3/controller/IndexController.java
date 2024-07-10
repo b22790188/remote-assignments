@@ -1,9 +1,11 @@
 package org.example.assignment3.controller;
 
+import org.example.assignment3.DTO.UserDto;
 import org.example.assignment3.model.User;
 import org.example.assignment3.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -20,24 +22,16 @@ public class IndexController {
         return "index";
     }
 
-
-    @PostMapping("/handleSignUp")
-    public void  handleSignUp(@RequestBody String formdata){
-        System.out.println(formdata);
+    @GetMapping("/signup")
+    public String getSignup(){
+        return "signup";
     }
 
-
-    /**
-     * test api
-     */
-    @ResponseBody
-    @GetMapping("/test")
-    public String userTest(){
-        try{
-            Optional<User> user = Optional.ofNullable(userService.getUserByEmail("test@gmail.com", "test123"));
-            return user.map(User::getEmail).orElse("User not found");
-        } catch(Exception e){
-            return "Error occurred: "+e.getMessage();
-        }
+    @PostMapping("/signup")
+    public String postSignup(@ModelAttribute UserDto userDto, Model model){
+        String signupMessage = userService.signup(userDto);
+        model.addAttribute("message", signupMessage);
+        return "signup";
     }
+
 }

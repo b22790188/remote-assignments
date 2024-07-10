@@ -1,5 +1,6 @@
 package org.example.assignment3.service;
 
+import org.example.assignment3.DTO.UserDto;
 import org.example.assignment3.dao.UserDao;
 import org.example.assignment3.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,13 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Override
-    public User getUserByEmail(String email, String password){
-        return userDao.getUserByEmail(email, password);
+    public String signup(UserDto userDto){
+        boolean isRegistered = (userDao.getUserByEmail(userDto.getEmail()) != null);
+        return isRegistered ? "You have registered before!" : userDao.createUser(userDto);
     }
 
     @Override
-    public void createUser(User user){
-        userDao.createUser(user);
+    public void createUser(UserDto userDto){
+        userDao.createUser(userDto);
     }
 }
