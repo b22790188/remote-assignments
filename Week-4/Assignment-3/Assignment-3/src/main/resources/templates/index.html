@@ -6,7 +6,10 @@
 </head>
 <body>
 
-<form id="sign-in" method="post">
+<div th:unless="${message.isEmpty()}">
+    <h1 th:text="${message}"></h1>
+</div>
+<form id="login" action="login" method="post">
     <label for="user-email">Email:</label>
     <p><input type="text" id="user-email" name="email" placeholder="Input your email"></p>
     <label for="user-password">Password:</label>

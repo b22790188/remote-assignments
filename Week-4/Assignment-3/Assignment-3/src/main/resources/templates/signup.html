@@ -5,18 +5,14 @@
     <title>Signup</title>
 </head>
 <body>
-<div th:if="${message}">
-    <h1 th:text="${message}"></h1>
-</div>
-<div th:if="${message.isEmpty()}">
-    <form id="sign-up" action="/account/signup" method="post">
-        <label for="register-email">Email:</label>
-        <p><input type="text" id="register-email" name="email" placeholder="Input your email"></p>
-        <label for="register-password">Password:</label>
-        <p><input type="text" id="register-password" name="password" placeholder="Input your password"></p>
-        <!--    Todo: confirm password    -->
-        <button type="submit">Submit</button>
-    </form>
-</div>
+
+<form id="sign-up" action="/account/signup" method="post">
+    <label for="register-email">Email:</label>
+    <p><input type="text" id="register-email" name="email" placeholder="Input your email"></p>
+    <label for="register-password">Password:</label>
+    <p><input type="text" id="register-password" name="password" placeholder="Input your password"></p>
+    <!--    Todo: confirm password    -->
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>

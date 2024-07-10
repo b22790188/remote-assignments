@@ -2,10 +2,8 @@ package org.example.assignment3.service;
 
 import org.example.assignment3.DTO.UserDto;
 import org.example.assignment3.dao.UserDao;
-import org.example.assignment3.model.RegistrationResult;
+import org.example.assignment3.model.AuthResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,15 +13,16 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public RegistrationResult signup(UserDto userDto) {
-
-        boolean isRegistered = (userDao.getUserByEmail(userDto.getEmail()) != null);
-
-        return isRegistered ? new RegistrationResult("You have registered before!", "signup") : new RegistrationResult("Thanks for join us!", "member");
+    public AuthResult signup(UserDto userDto) {
+        boolean isRegistered = (userDao.getUserByAccountInfo(userDto) != null);
+        return isRegistered ? new AuthResult("You have registered before! Please sign in instead of sign up!", "")
+                : new AuthResult("Thanks for join us!", "member");
     }
 
     @Override
-    public void createUser(UserDto userDto) {
-        userDao.createUser(userDto);
+    public AuthResult login(UserDto userDto) {
+        boolean isMember = (userDao.getUserByAccountInfo(userDto) != null);
+        return isMember ? new AuthResult("Welcome back!", "member")
+                : new AuthResult("Invalid username or password! Please try again!", "");
     }
 }

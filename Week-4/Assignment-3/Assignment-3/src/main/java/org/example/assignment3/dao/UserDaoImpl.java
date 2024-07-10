@@ -15,13 +15,13 @@ public class UserDaoImpl implements UserDao {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public User getUserByEmail(String email) {
-        String sql = "SELECT * FROM user WHERE email = ?";
+    public User getUserByAccountInfo(UserDto userDto) {
+        String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
         try {
             return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> new User(
                     rs.getString("email"),
                     rs.getString("password")
-            ), email);
+            ), userDto.getEmail(), userDto.getPassword());
         } catch (IncorrectResultSizeDataAccessException e) {
             return null;
         }
