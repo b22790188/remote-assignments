@@ -6,6 +6,8 @@ import org.example.assignment3.model.AuthResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class UserServiceImpl implements UserService {
 
@@ -14,15 +16,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthResult signup(UserDto userDto) {
-        boolean isRegistered = (userDao.getUserByAccountInfo(userDto) != null);
-        return isRegistered ? new AuthResult("You have registered before! Please sign in instead of sign up!", "")
-                : new AuthResult("Thanks for join us!", "member");
+        return Optional.ofNullable(userDao.getUserByAccountInfo(userDto))
+                .map(user -> new AuthResult("You have registered before! Please sign in instead of sign up!", ""))
+                .orElseGet(() -> {
+                    userDao.createUser(userDto);
+                    return new AuthResult("Thanks for join us!", "member");
+                });
     }
 
     @Override
     public AuthResult login(UserDto userDto) {
-        boolean isMember = (userDao.getUserByAccountInfo(userDto) != null);
-        return isMember ? new AuthResult("Welcome back!", "member")
-                : new AuthResult("Invalid username or password! Please try again!", "");
+        return Optional.ofNullable(userDao.getUserByAccountInfo(userDto))
+                .map(user -> new AuthResult("Welcome back!", "member"))
+                .orElseGet(() -> new AuthResult("Login failed! Please try again!", ""));
+
     }
 }

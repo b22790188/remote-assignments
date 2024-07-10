@@ -4,9 +4,9 @@ public class AuthResult {
     private String message;
     private String filePath;
 
-    public AuthResult(String message, String templateName) {
+    public AuthResult(String message, String filePath) {
         setMessage(message);
-        setFilePath(templateName);
+        setFilePath(filePath);
     }
 
     public String getMessage() {
