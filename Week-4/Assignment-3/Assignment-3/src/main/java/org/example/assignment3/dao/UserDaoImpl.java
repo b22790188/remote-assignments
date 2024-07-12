@@ -4,6 +4,7 @@ import org.example.assignment3.DTO.UserDto;
 import org.example.assignment3.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -30,7 +31,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void createUser(UserDto userDto) {
-        String sql = "INSERT INTO user (email, password) VALUES (?, ?)";
-        jdbcTemplate.update(sql, userDto.getEmail(), userDto.getPassword());
+        try {
+            String sql = "INSERT INTO user (email, password) VALUES (?, ?)";
+            jdbcTemplate.update(sql, userDto.getEmail(), userDto.getPassword());
+        } catch (DataAccessException dae) {
+            System.out.println(dae.getMessage());
+        }
     }
 }
