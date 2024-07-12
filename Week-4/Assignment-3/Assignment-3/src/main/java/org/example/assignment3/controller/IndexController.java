@@ -1,6 +1,5 @@
 package org.example.assignment3.controller;
 
-import jakarta.validation.Valid;
 import org.example.assignment3.DTO.UserDto;
 import org.example.assignment3.model.AuthResult;
 import org.example.assignment3.service.UserService;
@@ -23,12 +22,11 @@ public class IndexController {
 
     @GetMapping()
     public String index(@ModelAttribute("message") String message, Model model){
-        model.addAttribute("message", message);
         return "index";
     }
 
     @PostMapping("/login")
-    public RedirectView postSignup(@Valid UserDto userDto, RedirectAttributes redirectAttributes){
+    public RedirectView postSignup(UserDto userDto, RedirectAttributes redirectAttributes){
         AuthResult result = userService.login(userDto);
         redirectAttributes.addFlashAttribute("message", result.getMessage());
         return new RedirectView("/"+result.getFilePath());

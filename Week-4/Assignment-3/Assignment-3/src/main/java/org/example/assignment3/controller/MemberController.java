@@ -12,7 +12,6 @@ public class MemberController {
 
     @GetMapping()
     public String getMember(@ModelAttribute("message") String message, Model model) {
-        model.addAttribute(message);
         return "member";
     }
 }
