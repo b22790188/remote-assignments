@@ -26,9 +26,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthResult login(UserDto userDto) {
-        return Optional.ofNullable(userDao.getUserByAccountInfo(userDto))
-                .map(user -> new AuthResult("Welcome back!", "member"))
-                .orElseGet(() -> new AuthResult("Login failed! Please try again!", ""));
+        return Optional.ofNullable(userDao.getUserByEmail(userDto.getEmail()))
+                .map(user ->
+                    user.getPassword().equals(userDto.getPassword())
+                            ? new AuthResult("Welcome back", "member")
+                            : new AuthResult("Wrong email or password! Please try again!", "")
+                )
+                .orElseGet(() -> new AuthResult("User not exist! Please sign up first!", ""));
 
     }
 }

@@ -5,9 +5,10 @@ import org.example.assignment3.model.User;
 
 public interface UserDao {
     /**
-     * @param userDto@return User - if user can be found in database, return user.Otherwise, return null.
+     *
+     * @param email User email provided by client
+     * @return User
      */
-    User getUserByAccountInfo(UserDto userDto);
 
     User getUserByEmail(String email);
     /**
