@@ -27,7 +27,7 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'test@gmail.com','test123'),(2,'testCreate@gmail.com','test123'),(3,'test','test'),(4,'testCreate@gmail.com','test123'),(5,'testCreate@gmail.com','test123'),(6,'testCreate@gmail.com','test123'),(7,'guoabc','guoabc'),(8,'guo123','guo456'),(9,'guo','guo'),(10,'abcdfas','sdafasd'),(11,'710904','tst'),(12,'tr','tr'),(13,'ta','ta'),(14,'123','123'),(16,'t','t'),(17,'',''),(18,'abcdfas','def'),(19,'tt','tt');
+INSERT INTO `user` VALUES (1,'alice@example.com','password123'),(2,'bob@example.com','password123'),(3,'carol@example.com','password123'),(4,'dave@example.com','password123'),(5,'eve@example.com','password123'),(6,'test@gmail.com','123');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12 20:10:26
+-- Dump completed on 2024-07-16  9:19:20

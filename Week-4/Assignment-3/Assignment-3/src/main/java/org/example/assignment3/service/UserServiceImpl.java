@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthResult signup(UserDto userDto) {
-        return Optional.ofNullable(userDao.getUserByAccountInfo(userDto))
+        return Optional.ofNullable(userDao.getUserByEmail(userDto.getEmail()))
                 .map(user -> new AuthResult("You have registered before! Please sign in instead of sign up!", ""))
                 .orElseGet(() -> {
                     userDao.createUser(userDto);

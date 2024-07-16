@@ -28,6 +28,18 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    @Override
+    public User getUserByEmail(String email) {
+        String sql = "SELECT * FROM user WHERE email = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> new User(
+                    rs.getString("email")
+            ), email);
+        } catch (IncorrectResultSizeDataAccessException e) {
+            return null;
+        }
+    }
+
 
     @Override
     public void createUser(UserDto userDto) {

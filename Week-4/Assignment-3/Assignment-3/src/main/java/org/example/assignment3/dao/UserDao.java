@@ -9,6 +9,7 @@ public interface UserDao {
      */
     User getUserByAccountInfo(UserDto userDto);
 
+    User getUserByEmail(String email);
     /**
      * @param userDto User info provided by client.
      * @return - Message that shows if signup is successful or not.
